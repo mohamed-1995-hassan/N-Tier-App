@@ -9,6 +9,6 @@ namespace BOS.Entities.Models
 {
    public class ApplicationUser : IdentityUser
     {
-
+        public double Balance { get; set; }
     }
 }
