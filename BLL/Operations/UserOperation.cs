@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Operations
 {
-    public class UserOperation
+    public class UserOperation : IUserOperation
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -21,6 +21,12 @@ namespace BLL.Operations
             _signInManager = signInManager;
             _roleManager = roleManager;
         }
+
+        public UserOperation()
+        {
+
+        }
+
 
         public async Task<IdentityResult> Create(RegisterBindingModel model)
         {
@@ -39,7 +45,7 @@ namespace BLL.Operations
         {
           return  await _roleManager.CreateAsync(new IdentityRole(role));
         }
-
+        
         public async Task<bool> AsignRole(string UserEmail,string Role) {
 
             ApplicationUser applicationUser = await _userManager.FindByEmailAsync(UserEmail);
@@ -66,6 +72,7 @@ namespace BLL.Operations
 
         public async Task<string> DeleteUser(string userID)
         {
+            
             if (userID == null)
                 return "ID is A Null Value";
             ApplicationUser applicationUser = await _userManager.FindByIdAsync(userID);

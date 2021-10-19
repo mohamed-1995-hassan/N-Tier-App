@@ -78,7 +78,8 @@ namespace N_Tier_App.Controllers
             }
             return BadRequest("Errors");
         }
-        [Authorize(Roles = "Admin,DefaultAdmin")]
+       // [Authorize(Roles = "Admin,DefaultAdmin")]
+        [HttpPost]
         [Route("AsignRole")]
         public async Task<IActionResult> AsignRole(string UserEmail, string Role)
         {
