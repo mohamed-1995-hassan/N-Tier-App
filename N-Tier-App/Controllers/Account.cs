@@ -35,11 +35,11 @@ namespace N_Tier_App.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if (HttpContext.User.IsInRole("Admin"))
-            {
+           // if (HttpContext.User.IsInRole("Admin"))
+           // {
 
                  result = await _userOperation.Create(model);
-            }
+           // }
 
             if (result.Succeeded)
             {
