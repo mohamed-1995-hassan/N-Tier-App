@@ -119,5 +119,16 @@ namespace N_Tier_App.Controllers
         public IActionResult index() {
             return Content("hello");
         }
+
+
+
+
+
+
+
+
+
+
+
     }
 }
