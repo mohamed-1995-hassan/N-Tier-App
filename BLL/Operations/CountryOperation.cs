@@ -19,7 +19,7 @@ namespace BLL.Operations
         public void Create(Country country) {
 
             _IbaseRepository.Insert(country);
-            Console.WriteLine("mohamed");
+            Console.WriteLine("mohamed22");
         }
     }
 }
